@@ -12,8 +12,8 @@ int k = Convert.ToInt32(Console.ReadLine());
 
 int max = 0;
 
-if(n>max) { max = n; }
-if(m>max) { max = m; }
-if(k>max) { max = k; }
+if(n > max) { max = n; }
+if(m > max) { max = m; }
+if(k > max) { max = k; }
 
 Console.WriteLine("Максимальное число: " + max);
