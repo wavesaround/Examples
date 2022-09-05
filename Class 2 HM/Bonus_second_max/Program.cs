@@ -16,6 +16,7 @@ int i = 0;
             max = array[i];
             i++;
         }
+        else if (array[i] > max2) max2 = array[i];
         else i++;
     }
 
