@@ -4,15 +4,19 @@
 int[,,] InputMatrix(int row, int col)
 {
     int[,,] matrix = new int[row, col, col];
-    int[] CheckMatrix = new int[2 * (row + col)];
-    int temp = 0;
+    int temp = 10;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                matrix[j, k, i] = new Random().Next(11, 99);
+                if (temp < 100 & temp > 9)
+                {
+                    matrix[j, k, i] = temp;
+                    temp++;
+                }
+                else return matrix;
             }
         }
     }
@@ -27,7 +31,11 @@ void PrintMatrix(int[,,] matrix)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                Console.Write($"{matrix[j, k, i]}  ({j}, {k}, {i})  ");
+                if (matrix[j, k, i] < 100 & matrix[j, k, i] > 9)
+                    Console.Write($"{matrix[j, k, i]}  ({j}, {k}, {i})  ");
+                else
+                    Console.Write($"0{matrix[j, k, i]}  ({j}, {k}, {i})  ");
+                
             }
             Console.WriteLine();
         }
